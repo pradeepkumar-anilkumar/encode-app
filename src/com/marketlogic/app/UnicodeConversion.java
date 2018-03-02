@@ -18,16 +18,16 @@ public class UnicodeConversion {
 		//Variable declaration based on the parameters received
 		String inputData = original;
 		char[] originalString = inputData.toCharArray();
+		//check if the  input data is null and return no value for processing
+				if (null == inputData || inputData.isEmpty()) {
+					System.out.println("InputData is Null/Empty");
+					return inputData;
+				}	
 		int inputLength = inputData.length();
 		char[] convertedResult = new char[inputLength];
 		boolean midCharFlag = inputLength % 2 == 1 ? true : false;
 		
 		try{
-		//check if the  input data is null and return no value for processing
-		if (null == inputData || inputData.isEmpty()) {
-			System.out.println("InputData is Null/Empty");
-			return inputData;
-		}	
 		//Check for the maximum offset value
 		if (offSet % Constants.MAXALPHASIZE != 0)
 			offSet = offSet % Constants.MAXALPHASIZE;
